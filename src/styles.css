@@ -1,0 +1,100 @@
+.ag-theme-alpine {
+  width: 100%;
+  height: auto;
+  --ag-header-background-color: #263454;
+  --ag-font-size: 7px; 
+  --ag-font-family: monospace;
+  /* --ag-header-cell-hover-background-color: rgb(0, 0, 0); */
+  --ag-odd-row-background-color: rgba(0, 0, 0, 0.03);
+  --ag-foreground-color: black;
+  --ag-data-color: black;
+  --ag-secondary-foreground-color: #fff;
+  z-index: 9999 !important;
+}
+
+.ag-theme-alpine.custom-header-color1 {
+  --ag-header-background-color: #47a74f; /* สีเขียว */
+}
+.ag-theme-alpine.custom-header-color2 {
+  --ag-header-background-color: hsl(39, 88%, 53%); 
+}
+.ag-theme-alpine.custom-header-color3 {
+  --ag-header-background-color: hsl(200 69% 50%); 
+}
+
+
+.ag-theme-alpine .ag-header-cell {
+  color: #fff;
+  font-size: 7px; 
+  font-weight: 2000; /* เพิ่มน้ำหนักตัวอักษรในเซลล์ */
+  white-space: normal !important; 
+  word-wrap: break-word !important;
+}
+
+.ag-theme-alpine .ag-cell {
+  border-bottom: 1px solid rgba(18, 53, 132, 0.1);
+  white-space: normal !important; 
+  word-wrap: break-word !important;
+  line-height: 1.2; 
+  font-weight: 700; /* เพิ่มน้ำหนักตัวอักษรในเซลล์ */
+}
+
+
+
+.ag-theme-alpine .ag-header-row {
+  flex-wrap: wrap; 
+}
+
+/* Updated styles for pagination controls */
+.ag-theme-alpine .ag-paging-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #304878;
+  z-index: 10; /* Ensure the pagination panel is on top of other elements */
+}
+
+/* Ensure that pagination controls are visible */
+.ag-theme-alpine .ag-paging-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #304878;
+  z-index: 10; /* Ensure the pagination panel is on top of other elements */
+  position: relative; /* This allows the dropdown to be correctly positioned within this panel */
+}
+.ag-theme-alpine.custom-paging-color1 .ag-paging-panel {
+  background-color: #47a74f; /* Green background */
+}
+.ag-theme-alpine.custom-paging-color2 .ag-paging-panel {
+  background-color: hsl(39, 88%, 53%) /* Green background */
+}
+.ag-theme-alpine.custom-paging-color3 .ag-paging-panel {
+  background-color: hsl(200 69% 50%)  /* Green background */
+}
+/* Adjust dropdown styles */
+.ag-theme-alpine .ag-paging-panel .ag-paging-dropdown {
+  z-index: 20; /* Ensure the dropdown is on top of the pagination panel */
+  position: relative;
+}
+
+.ag-theme-alpine .ag-paging-panel .ag-paging-dropdown select {
+  z-index: 25; /* Ensure the select options are visible on top */
+  background-color: #304878; /* Ensure the background color of the dropdown is visible */
+}
+
+.ag-theme-alpine.custom-font-size .ag-cell .ag-header-cell{
+  font-size: 4px !important; /* กำหนดขนาดฟอนต์เป็น 8px */
+}
+
+
+
+.divider {
+  height: 1px;               /* ความสูงของเส้น */
+  background-color: #ccc;     /* สีของเส้น */
+  border: none;               /* ไม่มีเส้นขอบเพิ่มเติม */
+  width: 100%;                /* ความกว้างของเส้น */
+  margin: 10px 0;             /* ระยะห่างของเส้นด้านบนและล่าง */
+}

@@ -1,0 +1,60 @@
+steps:
+  # Build a custom image with Node.js 22
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/fnul-441009/nodejs-app-builder:node20',
+      '-f', 'Dockerfile',
+      '.'
+    ]
+
+  # Push the custom image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'gcr.io/fnul-441009/nodejs-app-builder:node20'
+    ]
+
+  # Use the custom image to install dependencies
+  - name: 'gcr.io/fnul-441009/nodejs-app-builder:node20'
+    args: ['npm', 'install']
+
+  # # Run tests (optional)
+  # - name: 'gcr.io/fnul-441009/nodejs-app-builder:node20'
+  #   args: ['npm', 'test']
+
+  # Build the application
+  - name: 'gcr.io/fnul-441009/nodejs-app-builder:node20'
+    args: ['npm', 'run', 'build']
+
+  # Package the app into a Docker image for deployment
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/fnul-441009/promotionproposal:latest',
+      '.'
+    ]
+
+  # Push the Docker image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'gcr.io/fnul-441009/promotionproposal:latest'
+    ]
+
+  # # Deploy to Cloud Run (replace `YOUR_REGION` with the desired region)
+  # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  #   entrypoint: gcloud
+  #   args:
+  #     [
+  #       'run', 'deploy', 'assistant-order-system',
+  #       '--image', 'gcr.io/fnul-441009/assistant-order-system:latest',
+  #       '--platform', 'managed',
+  #       '--region', 'asia-southeast1',
+  #       '--allow-unauthenticated',
+  #       '--set-env-vars', 'GOOGLE_CLOUD_BUCKET=assistant-order-system'
+  #     ]
+
+# Logging options (optional, set Cloud Build logging mode)
+options:
+  logging: CLOUD_LOGGING_ONLY

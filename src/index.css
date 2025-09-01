@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slower-spin {
+    animation-duration: 5s;
+  }
+
+  .swal2-container {
+    z-index: 9999 !important; /* Ensure it's higher than other elements */
+}

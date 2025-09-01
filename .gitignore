@@ -1,0 +1,100 @@
+# === Node.js ===
+node_modules/
+.pnpm/
+.yarn/
+.bun/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# === Vite ===
+node_modules/.vite/
+.vite/
+dist/
+*.local
+vite.config_beforechange_logo.js
+
+# === Build output ===
+build/
+out/
+public/build/
+
+# === TypeScript ===
+*.tsbuildinfo
+
+# === Test output ===
+coverage/
+test-results/
+test_output/
+
+# === Environment variables ===
+.env
+.env.*
+!.env.example
+**/env.js
+src/config/env.js
+
+# === Editor / IDE ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Mac/Linux/Windows temp files ===
+*.swp
+*~
+*.bak
+*.tmp
+*.orig
+
+# === VS Code history plugin ===
+.history/
+
+# === Binaries / Native Addons ===
+*.node
+
+# === PM2 logs ===
+.pids/
+*.log
+
+# === Bun ===
+bun.lockb
+
+# === Tailwind ===
+tailwind.config.js
+tailwind.config.cjs
+tailwind.config.ts
+
+# === TurboRepo ===
+turbo/
+
+# === Firebase / Netlify / Vercel (optional) ===
+.firebase/
+.netlify/
+.vercel/
+
+# === Git backup ===
+*.patch
+*.diff
